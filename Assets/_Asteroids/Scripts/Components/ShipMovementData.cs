@@ -11,5 +11,6 @@ namespace _Asteroids.Scripts.Components
         public int RotateDir;
         public float RotateSpeed;
         public float Speed;
+        public float maxMovementSpeed;
     }
 }
