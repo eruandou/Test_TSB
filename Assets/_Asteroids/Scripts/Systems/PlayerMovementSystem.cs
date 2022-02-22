@@ -10,9 +10,18 @@ using Unity.Rendering;
 namespace _Asteroids.Scripts.Systems
 {
     [AlwaysSynchronizeSystem]
-    public class PlayerMovementSystem : JobComponentSystem
+    public class PlayerMovementSystem : SystemBase
     {
+        /*
         protected override JobHandle OnUpdate(JobHandle inputDeps)
+        {
+           ;
+
+
+            return default;
+        }*/
+
+        protected override void OnUpdate()
         {
             var deltaTime = Time.DeltaTime;
 
@@ -23,13 +32,10 @@ namespace _Asteroids.Scripts.Systems
                     var direction = math.mul(playerRotation.Value, new float3(0f, 1f, 0f));
                     var limitSpeed = new float3(moveData.maxMovementSpeed, moveData.maxMovementSpeed, 0);
                     playerVelocity.Linear += moveData.Speed * moveData.MoveForward * deltaTime * direction;
-                    playerVelocity.Linear = math.clamp(playerVelocity.Linear, -limitSpeed, limitSpeed );
+                    playerVelocity.Linear = math.clamp(playerVelocity.Linear, -limitSpeed, limitSpeed);
                     playerRotation.Value = math.mul(playerRotation.Value,
                         quaternion.RotateZ(math.radians(moveData.RotateDir * moveData.RotateSpeed * deltaTime)));
                 }).Run();
-
-
-            return default;
         }
     }
 }

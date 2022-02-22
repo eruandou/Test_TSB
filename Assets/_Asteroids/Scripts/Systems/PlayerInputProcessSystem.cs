@@ -6,9 +6,9 @@ using UnityEngine;
 namespace _Asteroids.Scripts.Systems
 {
     [AlwaysSynchronizeSystem]
-    public class PlayerInputProcessSystem : JobComponentSystem
+    public class PlayerInputProcessSystem : SystemBase
     {
-        protected override JobHandle OnUpdate(JobHandle inputDeps)
+        protected override void OnUpdate()
         {
             Entities.ForEach((ref ShipMovementData moveData, in PlayerInputData inputData) =>
                 {
@@ -17,8 +17,6 @@ namespace _Asteroids.Scripts.Systems
                         Input.GetKey(inputData.RotateLeft) ? -1 : 0;
                 }
             ).Run();
-
-            return default;
         }
     }
 }

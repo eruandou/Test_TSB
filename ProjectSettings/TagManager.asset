@@ -44,3 +44,9 @@ TagManager:
   - name: Objects
     uniqueID: 575998001
     locked: 0
+  - name: Bullets
+    uniqueID: 3026802643
+    locked: 0
+  - name: Player
+    uniqueID: 1020137727
+    locked: 0

@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &739410393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739410394}
+  - component: {fileID: 629992018109735759}
+  m_Layer: 6
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &739410394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739410393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.376, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6454531330118612642}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629992018109735759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739410393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0ed9f5e8db4a2fa369b3d91744bc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6454531330118612316
 GameObject:
   m_ObjectHideFlags: 0
@@ -15,6 +58,7 @@ GameObject:
   - component: {fileID: 1895911938}
   - component: {fileID: 1272422822}
   - component: {fileID: 1272422823}
+  - component: {fileID: 4281103012350700737}
   m_Layer: 6
   m_Name: Player_Ship
   m_TagString: Untagged
@@ -32,7 +76,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 739410394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -68,8 +113,8 @@ MonoBehaviour:
   MoveForward: 0
   RotateDir: 0
   RotateSpeed: 90
-  Speed: 5
-  maxMovementSpeed: 500
+  Speed: 1
+  maxMovementSpeed: 3
 --- !u!212 &1895911937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -107,8 +152,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 575998001
-  m_SortingLayer: 1
+  m_SortingLayerID: 1020137727
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b52e4f7821092df4fa2d4eb0841747fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -292,7 +337,7 @@ MonoBehaviour:
   m_MotionType: 0
   m_Smoothing: 1
   m_Mass: 1
-  m_LinearDamping: 0.01
+  m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_InitialLinearVelocity:
     x: 0
@@ -327,3 +372,19 @@ MonoBehaviour:
     Tag05: 0
     Tag06: 0
     Tag07: 0
+--- !u!114 &4281103012350700737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454531330118612316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e461d861f2644a24db5d4ad020d83949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireRatePerSecond: 2
+  CurrentFireRate: 0
+  BulletPrefab: {fileID: 774123324185495053, guid: 173cc80991130b54eb380878fdc9dcad, type: 3}
+  BulletInitialVelocity: 5
