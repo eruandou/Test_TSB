@@ -12,5 +12,8 @@ namespace _Asteroids.Scripts.Components
         public float RotateSpeed;
         public float Speed;
         public float maxMovementSpeed;
+        public bool HyperSpeedMode;
+        public float HyperSpeedModeCooldown;
+        public float HyperSpeedModeCurrentTime;
     }
 }

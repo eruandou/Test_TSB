@@ -50,7 +50,7 @@ namespace _Asteroids.Scripts.Systems
                         return;
 
 
-                    sData.CurrentFireRate = sData.FireRatePerSecond;
+                    sData.CurrentFireRate = 1/sData.FireRatePerSecond;
                     var bullet = buffer.Instantiate(sData.BulletPrefab);
 
                     var pos = new Translation()

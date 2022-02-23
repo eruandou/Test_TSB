@@ -59,6 +59,8 @@ GameObject:
   - component: {fileID: 1272422822}
   - component: {fileID: 1272422823}
   - component: {fileID: 4281103012350700737}
+  - component: {fileID: 1744418771181607599}
+  - component: {fileID: 2763698762186880938}
   m_Layer: 6
   m_Name: Player_Ship
   m_TagString: Untagged
@@ -115,6 +117,9 @@ MonoBehaviour:
   RotateSpeed: 90
   Speed: 1
   maxMovementSpeed: 3
+  HyperSpeedMode: 0
+  HyperSpeedModeCooldown: 5
+  HyperSpeedModeCurrentTime: 0
 --- !u!212 &1895911937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -388,3 +393,34 @@ MonoBehaviour:
   CurrentFireRate: 0
   BulletPrefab: {fileID: 774123324185495053, guid: 173cc80991130b54eb380878fdc9dcad, type: 3}
   BulletInitialVelocity: 5
+--- !u!114 &1744418771181607599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454531330118612316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4178188d818a45b59335d4e2ba7401cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HyperSpaceCooldown: 3
+  HyperSpaceCurrentCooldown: 0
+  SizeChangeSpeed: 3
+  IsHyperSpaceTravelling: 0
+  IsShrinking: 0
+  IsGrowing: 0
+  ChangePositionQueued: 0
+--- !u!114 &2763698762186880938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454531330118612316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27366a40d47c2f548b87b7888552ef66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -15,6 +15,7 @@ namespace _Asteroids.Scripts.Systems
                     moveData.MoveForward = Input.GetKey(inputData.Thrust) ? 1 : 0;
                     moveData.RotateDir = Input.GetKey(inputData.RotateRight) ? 1 :
                         Input.GetKey(inputData.RotateLeft) ? -1 : 0;
+                    
                 }
             ).Run();
         }
